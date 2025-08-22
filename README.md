@@ -71,23 +71,17 @@
       let phone = document.getElementById("phone").value;
       let networkDisplay = document.getElementById("network");
       let prefix = phone.substring(0, 3);
-
-      // MTN prefixes
-      if (/^(053|024|055|025|059|054)/.test(prefix)) {
+      
+      if (/^(024|054|055|059|025)/.test(prefix)) {
         detectedNetwork = "MTN";
-      } 
-      // Vodafone prefixes
-      else if (/^(020|050)/.test(prefix)) {
+      } else if (/^(020|050)/.test(prefix)) {
         detectedNetwork = "Vodafone";
-      } 
-      // AirtelTigo prefixes
-      else if (/^(027|057|026|056)/.test(prefix)) {
+      } else if (/^(027|057|026|056)/.test(prefix)) {
         detectedNetwork = "AirtelTigo";
-      } 
-      else {
+      } else {
         detectedNetwork = "";
       }
-
+      
       networkDisplay.innerHTML = detectedNetwork ? "Detected Network: " + detectedNetwork : "";
     }
 
